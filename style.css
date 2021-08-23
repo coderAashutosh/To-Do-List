@@ -1,0 +1,209 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: hsl(235, 21%, 11%);
+    --secondary-color: hsl(235, 24%, 19%);
+    --tertiary-color: hsl(234, 39%, 85%);
+}
+
+.dark-theme{
+    --primary-color: rgb(228, 228, 252);
+    --secondary-color: rgb(212, 212, 255); 
+    --tertiary-color: black;
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--primary-color);
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.background-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 350px;
+    z-index: -1;
+}
+
+.background-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+.container{
+    width: 100%;
+    max-width: 700px;
+    margin: 0px 30px;
+    margin-top: 100px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title{
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 8px;
+}
+
+.new-todo{
+    background-color: var(--secondary-color);
+    height: 70px;
+    margin-top: 50px;
+    border-radius: 6px;
+    display: flex;
+}
+
+.check{
+    flex-basis: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.check-mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid hsl(237, 14%, 26%);
+    transition: all 0.25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.check-mark img{
+    visibility: hidden;
+}
+
+.check-mark img {
+    visibility: hidden;
+}
+
+.check-mark.checked img, .check-mark:hover img {
+    visibility: visible;
+}
+
+.check-mark:hover {
+    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);   
+}
+
+.check-mark.checked {
+    background-color: pink;
+    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);   
+}
+
+.todo-text.checked {
+    text-decoration: line-through;
+    color: hsl(233, 14%, 35%);
+}
+
+.new-todo-input {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.new-todo-input input {
+    width: 100%;
+    padding: 10px 0px;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--tertiary-color);
+}
+
+.new-todo-input form {
+    flex-grow: 1;
+    display: flex;
+}
+
+.new-todo-input input::placeholder {
+    color: hsl(233, 14%, 35%);
+}
+
+.todo-item{
+    width: 100%;
+    display: flex;
+    height: 70px;
+    background-color: var(--secondary-color);
+    border-bottom: 1px solid hsl(237, 14%, 26%);
+    color: var(--tertiary-color);
+    font-size: 18px;
+    transition: all 0.25s ease;
+    display: flex;
+    cursor: pointer;
+}
+
+.todo-item:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 0 7px 0px hsl(235, 21%, 11%);
+    border-color: hsl(235, 24%, 19%);
+}
+
+.todo-text{
+    display: flex;
+    align-items: center;
+}
+
+.todo-items-wrapper{
+    margin-top: 30px;
+    background-color: hsl(235, 24%, 19%);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.4);
+    margin-bottom: 30px;
+}
+
+.todo-items-info {
+    width: 100%;
+    height: 70px;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    color: hsl(233, 14%, 35%);
+    padding-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+
+.items-statuses {
+    display: flex;
+    justify-content: center;
+}
+
+.items-statuses span  {
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.items-clear {
+    cursor: pointer;
+    text-align: end;
+}
+
+.items-statuses span:hover, .items-clear:hover {
+    color: hsl(220, 98%, 61%);
+}
+
+.items-statuses .active  {
+    color: hsl(220, 98%, 61%);
+}
+
